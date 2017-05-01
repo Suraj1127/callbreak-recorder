@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Callbreak Recorder</title>
+	<meta property="og:image" content="http://www.creatovert.com/callbreak/sample.JPG" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<style>
+		td, th {
+			height: 37px;
+		}
+		.main {
+			display: none;
+		}
+		.final-result {
+			display: none;
+		}
+		.reset {
+			display: none;
+		}
+		.name-submit {
+			margin: -25px auto 12px auto;
+		}
+		#name-initialize {
+			margin-top: 30px;
+		}
+		#name1 {
+			margin-top: 15px;
+		}
+		.placeholder-div, .submit-result-form {
+			margin: 10px;
+		}
+		.form-control {
+			display: block;
+			margin: 12px auto;
+			width: 250px !important;;
+		}
+		.calls-submit, .results-submit {
+			margin-top: 10px;
+		}
+		.last-call-table thead tr th {
+			text-align: center !important;
+			max-width: 150px !important;
+		}
+		.reset-div {
+			margin-top: 15px;
+		}
+		.final-result-sub-div {
+			padding: 15px;
+			font-size: 18px;
+		}
+		body {
+			font-size: 18px;
+			font-family: "Arial";
+		}
+		tr, th {
+			text-align: center;
+		}
+		
+		#name-initialize input {
+			width: 250px !important;
+		}
+		table {
+			max-width: 600px !important;
+		}
+		.main {
+			margin-top: 30px;
+		}
+		.placeholder-top-div, span {
+			font-family: Georgia;
+			font-weight: bold;
+		}
+		body {
+			min-height: 100vh;
+			background: linear-gradient(#DCE35B,#45B649);
+			background-size: cover;
+		}
+		tr, th {
+			background: white;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class = "row input-names-div">
+			<div class = "col-md-12">
+				<div class = "text-center" id = "name-initialize">
+					Enter Players' Names in Order<br>
+					<input type="text" id = "name1" class="form-control">
+					<input type="text" id = "name2" class="form-control">
+					<input type="text" id = "name3" class="form-control">
+					<input type="text" id = "name4" class="form-control"><br>
+					<button class = "name-submit btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+
+		<div class = "row main">
+			<div class = "col-md-2 anticipate-button text-center">
+				<button data-toggle = "modal" data-target = ".modal1" class = "call-anticipate btn btn-success">Make Calls</button>
+
+				<div class="modal fade modal1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+				  <div class="modal-dialog modal-sm first-modal" role="document">
+				    <div class="modal-content">
+				    	<div class = "placeholder-div">
+					    	<div class = "internal-div-placeholder-div">
+						      Make a call:<br>
+						      <input type = "number" min = "1" id = "first-call" class="form-control">
+						      <input type = "number" min = "1" id = "second-call" class="form-control">
+						      <input type = "number" min = "1" id = "third-call" class="form-control">
+						      <input type = "number" min = "1" id = "fourth-call" class="form-control">
+						      <button class = "calls-submit btn btn-info" data-dismiss = "modal">Submit Calls</button>
+						    </div>
+					    </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+			<div class = "col-md-8 record-table">
+				<table style = "margin: 10px auto;" class = "main-table table table-striped">
+					<thead>
+						<tr class = "success">
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class = "row1">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class = "row2">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class = "row3">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class = "row4">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class = "row5">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>	
+			</div>
+			<div class = "col-md-2 results-button text-center">
+				<button data-toggle = "modal" data-target = ".modal2" class = "write-results btn btn-success">Write Results</button>
+
+				<div class="modal fade modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+				  <div class="modal-dialog modal-sm" role="document">
+				    <div class="modal-content">
+				    	<div class = "submit-result-form">
+				      	  Write Results<br>
+					      <input type = "number" min = "0" id = "first-result" class="form-control">
+					      <input type = "number" min = "0" id = "second-result" class="form-control">
+					      <input type = "number" min = "0" id = "third-result" class="form-control">
+					      <input type = "number" min = "0" id = "fourth-result" class="form-control">
+					      <button class = "results-submit btn btn-info" data-dismiss = "modal">Submit Results</button>
+					    </div>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<div class = "final-result text-center">
+			<!-- Large modal -->
+			<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bs-example-modal-lg">See Final Result</button>
+
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			  <div class="modal-dialog modal-lg" role="document">
+			    <div class="modal-content final-result-sub-div">
+			      
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<div class = "text-center reset-div">
+			<button type = "button" class = "reset btn btn-warning">Reset</button>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			var counter1 = 0;
+			var sum = [];
+			sum[0] = -50;
+			var counter = 1;
+			var calls = [];
+			var results = [];
+			//for inputting the player names
+			$(".name-submit").click(function() {
+				if (($("#name1").val() !== "") && ($("#name2").val() !== "") && ($("#name3").val() !== "") && ($("#name4").val() !== "")) {
+					$(".input-names-div").fadeOut(function() {
+						$(".main").fadeIn();
+					});
+					
+					if (counter <= 5) {
+						$(".call-anticipate, .write-results").css("display", "inline");
+					}
+				}
+				for (i = 2; i < 6; i++) {
+					var name = $("#name-initialize input:nth-child(" + i + ")").val();
+					i--;
+					$(".record-table table tr th:nth-child(" + i + ")").text(name);
+					i++;
+				}	
+			});	
+
+			//for giving placeholder when calls model pop up
+			$(".call-anticipate").click(function() {
+				if (counter !== counter1 + 1) {
+					$(".call-anticipate").attr("data-target", ".modal5");
+				} else {
+					$(".call-anticipate").attr("data-target", ".modal1");
+				}
+				var j = 1;
+				//for last call to be made giving information that it is the last call
+				if (counter == 5) {
+					$(".placeholder-top-div").empty();
+					for (j = 1; j < 5; j++) {
+						sum[j] = 0;
+						for (i = 1; i < 5; i++) {
+							sum[j] = sum[j] + parseFloat($(".row" + i + " td:nth-child(" + j + ")").text()); 
+						}
+					}
+					$(".first-modal").removeClass("modal-sm");
+					$(".first-modal").addClass("modal-lg");
+					$(".modal1 .modal-content .placeholder-div").prepend("<div class = 'placeholder-top-div text-center'>We have come to last call and the points as of now are as follows:<br>" + "<table class = 'table table-striped last-call-table' style = 'margin: 15px auto;'>" + "<thead>" + "<tr class = 'success'>" + "<th>" + $("#name1").val() + "</th>" + "<th>" + $("#name2").val() + "</th>" + "<th>" + $("#name3").val() + "</th>" + "<th>" + $("#name4").val() + "</th>" + "<tr>" + "</thead>" + "<tbody>" + "<tr>" + "<td>" + sum[1].toFixed(1) + "</td>" + "<td>" + sum[2].toFixed(1) + "</td>" + "<td>" + sum[3].toFixed(1) + "</td>" + "<td>" + sum[4].toFixed(1) + "</td>" + "</tr>" + "</tbody>" + "</table></div>");
+				}
+				for (i = 2; i < 9; i++) {
+					if (counter == 5) {
+						break;
+					}
+					$(".modal1 .modal-content .placeholder-div .internal-div-placeholder-div input:nth-child(" + i + ")").attr("placeholder", "Enter " + $(".record-table table tr th:nth-child(" + j + ")").text() + " Call");
+					j++;
+				}
+			});	
+
+			//for inputting the calls made by each player
+			$(".calls-submit").click(function() {
+				if (counter == 5) {
+					$(".placeholder-top-div").empty();
+				}
+				if (($(".placeholder-div .internal-div-placeholder-div input:nth-child(" + 2 + ")").val() !== "") && ($(".placeholder-div .internal-div-placeholder-div input:nth-child(" + 4 + ")").val() !== "") && (($(".placeholder-div .internal-div-placeholder-div input:nth-child(" + 6 + ")").val() !== "")) && (($(".placeholder-div .internal-div-placeholder-div input:nth-child(" + 8 + ")").val() !== ""))) {
+					counter1++;
+					var k = 2;
+					for (i = 1; i < 5; i++) {
+						$(".row" + counter + " td:nth-child(" + i + ")").text($(".placeholder-div .internal-div-placeholder-div input:nth-child(" + k + ")").val());
+						calls[i - 1] = $(".placeholder-div .internal-div-placeholder-div input:nth-child(" + k + ")").val();
+						k++;
+					}
+					for (i = 2; i < 9; i++) {
+						$(".modal1 .modal-content .placeholder-div .internal-div-placeholder-div input:nth-child(" + i + ")").val("");
+					}
+				}		
+			});
+			
+			$(".write-results").click(function() {
+				console.log(counter);
+				console.log(counter1);
+				if (counter !== counter1) {
+					$(".write-results").attr("data-target", ".modal5");
+				} else {
+					$(".write-results").attr("data-target", ".modal2");
+				}
+				console.log("true");
+				var j = 1;
+				for (i = 2; i < 9; i++) {
+
+					$(".modal2 .modal-content .submit-result-form input:nth-child(" + i + ")").attr("placeholder", "Enter " + $(".record-table table tr th:nth-child(" + j + ")").text() + " Result");
+					j++;
+					/*if (counter == 5) {
+						console.log("See, I came!");
+						$(".results-submit").addClass("call-anticipate");
+					}*/
+				}
+			});
+				
+			$(".results-submit").click(function() {
+				if (($("#first-result").val() !== "") && ($("#second-result").val() !== "") && ($("#third-result").val() !== "") && ($("#fourth-result").val() !== "")) {
+					var k = 2;
+					for (i = 1; i < 5; i++) {
+						results[i - 1] = $(".modal2 .modal-content .submit-result-form input:nth-child(" + k + ")").val();
+						k++;
+					}
+					for (i = 1; i < 5; i++) {
+						$(".row" + counter + " td:nth-child(" + i + ")").text(function() {
+							if (calls[i-1] > results[i-1]) {
+								return 0 - parseInt(calls[i-1]);
+							}
+							return parseInt(calls[i-1]) + (parseInt(results[i-1])-parseInt(calls[i-1]))/10;
+						});
+					}
+					counter++;
+					if (counter == 6) {
+						$(".final-result").css("display", "block");
+						$(".call-anticipate, .write-results").css("display", "none");
+					}
+					for (i = 2; i < 9; i++) {
+
+						$(".modal2 .modal-content .submit-result-form input:nth-child(" + i + ")").val("");
+					}
+				}
+			});
+			$(".final-result button").one("click", function() {
+				$(".reset").css("display", "inline-block");
+				for (j = 1; j < 5; j++) {
+							var i = 5;
+							sum[j] = sum[j] + parseFloat($(".row" + i + " td:nth-child(" + j + ")").text()); 
+					}
+					$(".final-result .modal .modal-content").prepend("<span>Well, we have now come to the end of the game.<br>  And the result is as follows: <br></span>" + "<table class = 'text-center table table-striped last-call-table' style = 'margin: 5px auto;'>" + "<thead>" + "<tr class = 'success'>" + "<th>" + $("#name1").val() + "</th>" + "<th>" + $("#name2").val() + "</th>" + "<th>" + $("#name3").val() + "</th>" + "<th>" + $("#name4").val() + "</th>" + "</tr>" + "</thead>" + "<tbody>" + "<tr>" + "<td>" + sum[1].toFixed(1) + "</td>" + "<td>" + sum[2].toFixed(1) + "</td>" + "<td>" + sum[3].toFixed(1) + "</td>" + "<td>" + sum[4].toFixed(1) + "</td>" + "</tr>" + "</tbody>" + "</table>");
+					var temp = sum.slice();
+					var position = [];
+					position = sum.sort(function(a,b) {
+						return a-b;
+					});	
+					var rank = [];
+					for (j = 1; j < 5; j++) {
+					for (i = 1; i < 5; i++) {
+						if (position[5-j] == temp[i]) {
+							rank[j] = $("#name" + i).val();
+						}
+					}
+					}
+					$(".final-result .modal .modal-content").append("<span style = 'font-size: 20px; font-family: Georgia;'>" + "<span style = 'color: #FFD700'>" + "First(Gold Medal)  " + "<i class = 'fa fa-long-arrow-right'></i>  " + rank[1] + "</span>" + "<br>" + "<span style = 'color: #C0C0C0'>" + "Second(Silver Medal)  " + "<i class = 'fa fa-long-arrow-right'></i>  " + rank[2] + "</span>" + "<br>" + "<span style = 'color: #A67D3D'>" + "Third(Bronze Medal)  " + "<i class = 'fa fa-long-arrow-right'></i>  " + rank[3] + "</span>" + "<br>" + "<span style = 'color: #B87333'>" + "Fourth(Copper Medal)  " + "<i class = 'fa fa-long-arrow-right'></i>  " + rank[4] + "</span>" + "</span>");				
+			});
+			$(".reset").click(function() {
+				location.reload();
+			});
+		});		
+	</script>
+</body>
+</html>
